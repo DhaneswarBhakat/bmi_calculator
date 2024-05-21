@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         body: SafeArea(
             child: Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(15.0),
       child: Column(
         children: [
           ThemeChangerBtn(),
@@ -49,6 +49,31 @@ class HomePage extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                   height: 0,
                   letterSpacing: 1.44,
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Container(
+                width: 175,
+                height: 50,
+                decoration: ShapeDecoration(
+                  color: Color(0xFF246AFE),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ),
+              Text(
+                'Male',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 15,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w500,
+                  height: 0,
                 ),
               ),
             ],
