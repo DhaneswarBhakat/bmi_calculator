@@ -1,5 +1,9 @@
+import 'package:bmi_calculator/Components/AgeSelector.dart';
+import 'package:bmi_calculator/Components/HeightSelector.dart';
+import 'package:bmi_calculator/Components/PrimaryButton.dart';
 import 'package:bmi_calculator/Components/ThemeChangerBtn.dart';
-import 'package:bmi_calculator/Controllers/ThemeController.dart';
+import 'package:bmi_calculator/Components/WeightSelector.dart';
+import 'package:bmi_calculator/Controllers/BMIController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,7 +12,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ThemeController themeController = Get.put(ThemeController());
+    BMIConroller bmiConroller = Get.put(BMIConroller());
     return Scaffold(
         body: SafeArea(
             child: Padding(
@@ -53,31 +57,44 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
+          const SizedBox(
+            height: 49,
+          ),
           Row(
             children: [
-              Container(
-                width: 175,
-                height: 50,
-                decoration: ShapeDecoration(
-                  color: Color(0xFF246AFE),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
+              PrimaryButton(icon: Icons.male, btnName: "MALE", onPress: () {
+                bmiConroller.genderHandle("MALE");
+              }),
+              const SizedBox(
+                width: 20,
               ),
-              Text(
-                'Male',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w500,
-                  height: 0,
-                ),
-              ),
+              PrimaryButton(icon: Icons.female, btnName: "FEMALE", onPress: () {
+                bmiConroller.genderHandle("FEMALE");
+              })
             ],
-          )
+          ),
+          const SizedBox(
+            height: 40,
+          ),
+                        const Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    HeightSelector(),
+                    SizedBox(width: 20),
+                    Expanded(
+                      child: Column(
+                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          WeightSelector(),
+                          SizedBox(height: 20),
+                          AgeSelector(),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
         ],
       ),
     )));
