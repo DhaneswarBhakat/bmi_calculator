@@ -20,7 +20,7 @@ class PrimaryButton extends StatelessWidget {
           child: Obx(
             () => Container(
               height: 50,
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: bmiConroller.Gender.value == btnName
@@ -33,7 +33,7 @@ class PrimaryButton extends StatelessWidget {
                       color: bmiConroller.Gender.value == btnName
                           ? Theme.of(context).colorScheme.primaryContainer
                           : Theme.of(context).colorScheme.primary),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   Text(
                     btnName,
                     style: TextStyle(

@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 var lightTheme = ThemeData(  useMaterial3: true,
   colorScheme: const ColorScheme.light(
-    background: LBgColor,
+    surface: LBgColor,
     primary: LPrimaryColor,
-    onBackground: LFontColor,
+    onSurface: LFontColor,
     primaryContainer: LDivColor,
     onPrimaryContainer: LFontColor,
     onSecondaryContainer: LLableColor,
@@ -14,9 +14,9 @@ var lightTheme = ThemeData(  useMaterial3: true,
 
 var darkTheme = ThemeData(useMaterial3: true,
   colorScheme: const ColorScheme.dark(
-    background: DBgColor,
+    surface: DBgColor,
     primary: DPrimaryColor,
-    onBackground: DFontColor,
+    onSurface: DFontColor,
     primaryContainer: DDivColor,
     onPrimaryContainer: DFontColor,
     onSecondaryContainer: DLableColor,

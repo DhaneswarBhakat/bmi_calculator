@@ -11,7 +11,7 @@ class HeightSelector extends StatelessWidget {
     BMIConroller bmiConroller = Get.put(BMIConroller());
     return Expanded(
       child: Container(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Theme.of(context).colorScheme.primaryContainer,
