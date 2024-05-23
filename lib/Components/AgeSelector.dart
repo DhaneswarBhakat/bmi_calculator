@@ -10,7 +10,7 @@ class AgeSelector extends StatelessWidget {
   Widget build(BuildContext context) {
     BMIConroller bmiConroller = Get.put(BMIConroller());
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: Theme.of(context).colorScheme.primaryContainer,
@@ -30,7 +30,7 @@ class AgeSelector extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
