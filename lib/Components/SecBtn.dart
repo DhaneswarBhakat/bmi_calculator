@@ -1,26 +1,44 @@
+import 'package:bmi_calculator/Config/Constants.dart';
+import 'package:bmi_calculator/Config/ResponsiveHelper.dart';
 import 'package:flutter/material.dart';
 
-class SecBtn extends StatelessWidget {
-    final VoidCallback onpress;
+/// A secondary button component used for increment/decrement operations
+class SecondaryButton extends StatelessWidget {
+  final VoidCallback onPressed;
   final IconData icon;
-  const SecBtn({super.key, required this.onpress, required this.icon});
+
+  const SecondaryButton({
+    super.key,
+    required this.onPressed,
+    required this.icon,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onpress,
+      onTap: onPressed,
+      borderRadius: BorderRadius.circular(ResponsiveHelper.getResponsiveBorderRadius(context)),
       child: Container(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.all(ResponsiveHelper.getResponsiveSpacing(context, AppConstants.smallPadding)),
         decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.primary,
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(ResponsiveHelper.getResponsiveBorderRadius(context)),
         ),
         child: Icon(
           icon,
           color: Theme.of(context).colorScheme.primaryContainer,
-          size: 25,
+          size: ResponsiveHelper.getResponsiveIconSize(context, AppConstants.defaultIconSize),
         ),
       ),
     );
   }
+}
+
+// Legacy class name for backward compatibility
+class SecBtn extends SecondaryButton {
+  const SecBtn({
+    super.key,
+    required super.onPressed,
+    required super.icon,
+  });
 }
